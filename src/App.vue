@@ -11,11 +11,3 @@
 <style lang="scss">
 @import './assets/stylesheet/style';
 </style>
-
-<script>
-export default {
-  mounted() {
-    this.$store.dispatch('onur')
-  }
-}
-</script>
