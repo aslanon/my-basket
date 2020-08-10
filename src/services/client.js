@@ -13,6 +13,7 @@ const client = clientInstance(process.env.VUE_APP_API_BASE_URL)
 
 export default {
   install() {
-    Vue.$client = client
+    Vue.prototype.$client = client
+    Vue['$client'] = client
   }
 }
