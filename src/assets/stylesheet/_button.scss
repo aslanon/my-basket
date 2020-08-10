@@ -1,0 +1,52 @@
+@import 'mixins';
+
+button {
+  @include formInputs;
+  background-color: var(--color-info);
+  color: var(--color-primary--reverse);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+
+  &:active {
+    filter: brightness(0.8);
+  }
+
+  img,
+  span {
+    margin-right: 5px;
+  }
+
+  &__info {
+    background-color: var(--color-info);
+    color: var(--color-info);
+  }
+  &__danger {
+    background-color: var(--color-danger);
+    color: var(--color-danger);
+  }
+  &__success {
+    background-color: var(--color-success);
+    color: var(--color-success);
+  }
+  &__warn {
+    background-color: var(--color-warn);
+    color: var(--color-warn);
+  }
+
+  &.--outline {
+    background-color: transparent !important;
+    border-color: var(--color-info);
+  }
+
+  &.--text {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    color: var(--color-secondary) !important;
+  }
+}

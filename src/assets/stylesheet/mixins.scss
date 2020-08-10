@@ -1,0 +1,13 @@
+@mixin formInputs {
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  padding: 5px 10px;
+  height: var(--form-element-height);
+
+  &[disabled],
+  &[disabled='disabled'] {
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,33 @@
+@import 'mixins';
+
+.form {
+  display: grid;
+  grid-auto-rows: auto;
+  grid-row-gap: 20px;
+  width: 100%;
+  margin: auto;
+
+  label {
+    display: grid;
+    grid-template-rows: auto;
+    grid-row-gap: 5px;
+    width: 100%;
+  }
+}
+
+input {
+  @include formInputs;
+  width: 100%;
+  color: var(--color-primary);
+  background-color: var(--background-color) !important;
+  border: 1px solid var(--border-color);
+  cursor: text;
+
+  &:hover {
+    border-color: var(--border-color--focus);
+  }
+
+  &:focus {
+    border-color: var(--border-color--focus);
+  }
+}
