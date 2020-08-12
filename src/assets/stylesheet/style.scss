@@ -3,6 +3,7 @@
 @import 'typography';
 @import 'button';
 @import 'input';
+@import 'layout.scss';
 
 :root {
   --transition-m: 0.35s ease;
@@ -12,6 +13,7 @@
   --padding-s: 4px;
 
   --background-color: #ffffff;
+  --background-color-hover: #e2e2e2;
   --border-color: #dfdfdf;
   --border-color--focus: #0172db;
 
@@ -84,4 +86,25 @@ hr {
   overflow: auto;
   grid-template-rows: auto;
   grid-row-gap: var(--padding-l);
+}
+
+.flex {
+  display: flex;
+
+  &__item {
+    margin-left: var(--padding-m);
+  }
+
+  &.center {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__row {
+    flex-direction: row;
+  }
+
+  &__column {
+    flex-direction: column;
+  }
 }

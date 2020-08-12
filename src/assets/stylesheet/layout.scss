@@ -1,0 +1,30 @@
+.app-layout {
+  width: 100%;
+  max-width: 1280px;
+  margin: auto;
+
+  nav,
+  .nav {
+    width: 100%;
+    padding: var(--padding-l) 0;
+    border-bottom: 1px solid var(--border-color);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-column-gap: 3rem;
+    align-items: center;
+
+    &__item {
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      padding: var(--padding-m);
+      user-select: none;
+      border-radius: 1rem;
+      position: relative;
+
+      &:hover {
+        background-color: var(--background-color-hover);
+      }
+    }
+  }
+}
