@@ -1,7 +1,7 @@
 <template>
   <nav>
     <h1>
-      📦 MyBasket
+      {{ appName }}
     </h1>
     <span>
       <input placeholder="Search..." type="text" />
@@ -15,7 +15,14 @@
 </template>
 
 <script>
+import { APP_NAME } from '@/constants'
+
 export default {
-  name: 'AppHeader'
+  name: 'AppHeader',
+  data() {
+    return {
+      appName: APP_NAME
+    }
+  }
 }
 </script>

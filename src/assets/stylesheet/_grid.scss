@@ -1,0 +1,9 @@
+.grid {
+  display: grid;
+
+  &__column {
+    grid-template-columns: auto auto auto;
+    grid-row-gap: 0;
+    grid-column-gap: 0;
+  }
+}

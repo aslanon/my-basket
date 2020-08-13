@@ -8,6 +8,10 @@ import client from './services/client'
 // import global styles
 import './assets/stylesheet/style.scss'
 
+import { APP_NAME } from './constants'
+
+document.title = APP_NAME
+
 Vue.config.productionTip = false
 
 // HTTP client

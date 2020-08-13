@@ -3,6 +3,7 @@
 @import 'typography';
 @import 'button';
 @import 'input';
+@import 'grid';
 @import 'layout.scss';
 
 :root {
@@ -43,7 +44,7 @@
   --color-info: #0172db;
   --color-success: #41b65b;
 
-  --container: 1280px;
+  --container: 1000px;
   --form-element-height: 40px;
 }
 

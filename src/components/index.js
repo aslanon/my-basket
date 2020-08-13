@@ -1,12 +1,12 @@
 import Vue from 'vue'
 
-import HelloWorld from './HelloWorld'
 import AppHeader from './app-header'
+import Card from './card'
 
-const components = [HelloWorld, AppHeader]
+const components = [AppHeader, Card]
 
 components.forEach(component => {
   Vue.component(component.name, component)
 })
 
-export { HelloWorld, AppHeader }
+export { AppHeader, Card }
