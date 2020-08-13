@@ -2,8 +2,11 @@
 @import 'reset';
 @import 'typography';
 @import 'button';
+@import 'card';
 @import 'input';
 @import 'grid';
+@import 'logo';
+@import 'media-query.scss';
 @import 'layout.scss';
 
 :root {
@@ -15,7 +18,7 @@
 
   --background-color: #ffffff;
   --background-color-hover: #e2e2e2;
-  --border-color: #dfdfdf;
+  --border-color: #ebebeb;
   --border-color--focus: #0172db;
 
   --font-size-l: 32px;
@@ -40,11 +43,11 @@
   --color-tertiary: #888888;
 
   --color-danger: #dd4545;
-  --color-warn: #ecbd51;
+  --color-warn: #fa641c;
   --color-info: #0172db;
   --color-success: #41b65b;
 
-  --container: 1000px;
+  --container: 1100px;
   --form-element-height: 40px;
 }
 

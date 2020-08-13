@@ -1,5 +1,6 @@
 @import 'mixins';
 
+.button,
 button {
   @include formInputs;
   background-color: var(--color-info);
@@ -8,6 +9,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: 500;
 
   &:hover {
     filter: brightness(0.9);
@@ -24,24 +26,25 @@ button {
 
   &__info {
     background-color: var(--color-info);
-    color: var(--color-info);
+    color: #fff;
   }
   &__danger {
     background-color: var(--color-danger);
-    color: var(--color-danger);
+    color: #fff;
   }
   &__success {
     background-color: var(--color-success);
-    color: var(--color-success);
+    color: #fff;
   }
   &__warn {
     background-color: var(--color-warn);
-    color: var(--color-warn);
+    color: #fff;
   }
 
   &.--outline {
     background-color: transparent !important;
-    border-color: var(--color-info);
+    border-color: var(--border-color);
+    color: var(--color-primary);
   }
 
   &.--text {

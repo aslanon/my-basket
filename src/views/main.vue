@@ -1,6 +1,11 @@
 <template>
   <div class="grid grid__column">
-    <card></card>
+    <card
+      v-for="(product, index) in products"
+      :key="index + '-card'"
+      :item="product"
+      :loading="isLoading"
+    ></card>
   </div>
 </template>
 
@@ -12,7 +17,8 @@ export default {
   name: 'Main',
   data() {
     return {
-      isLoading: false
+      isLoading: true,
+      products: Array(9).fill(1) // for dummay image
     }
   },
   methods: {
@@ -20,9 +26,9 @@ export default {
       try {
         this.isLoading = true
         let { data } = await getListings()
-        console.log(data)
+        if (data) this.products = data
       } catch (error) {
-        console.log(error)
+        // console.log(error)
       }
       this.isLoading = false
     }

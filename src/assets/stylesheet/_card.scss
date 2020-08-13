@@ -1,0 +1,64 @@
+.card {
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: calc(1 * var(--padding-l));
+  display: grid;
+  grid-template-rows: auto;
+  grid-row-gap: var(--padding-l);
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+
+  &:nth-last-child(4n-2) {
+    border-left: 1px solid var(--border-color);
+  }
+
+  &__image {
+    height: 100px;
+    object-fit: cover;
+    margin: auto;
+  }
+
+  &__dummy {
+    user-select: none;
+    font-size: 100px;
+    margin: auto;
+    filter: grayscale(1);
+    opacity: 0.3;
+    animation: fadeInOpacity 3s ease infinite both;
+  }
+
+  &__title {
+    color: var(--color-tertiary);
+    font-size: var(--font-size-s);
+    line-height: var(--font-line-height-s);
+    font-weight: var(--font-weight-s);
+    text-align: center;
+  }
+
+  &__footer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: var(--padding-m);
+    align-items: center;
+
+    &__text {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+    }
+  }
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+  }
+}

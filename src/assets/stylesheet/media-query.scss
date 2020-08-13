@@ -1,0 +1,15 @@
+@media only screen and (max-width: 1024px) {
+  .app-layout {
+    nav,
+    .nav {
+      padding: var(--padding-l) !important;
+    }
+
+    .page-order {
+      grid-template-columns: 1fr !important;
+    }
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
