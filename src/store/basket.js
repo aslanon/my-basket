@@ -1,5 +1,3 @@
-import Vue from 'vue'
-
 export default {
   namespaced: true,
   state: {
@@ -16,11 +14,6 @@ export default {
       }
     },
     ADD_TO_BASKET(state, data) {
-      Vue.notify({
-        title: '👋',
-        text: 'Product added to cart.'
-      })
-
       if (!state.list.map(p => p.id).includes(data.id)) {
         state.list.push(data)
         return

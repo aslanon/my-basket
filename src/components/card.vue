@@ -26,6 +26,7 @@
           v-if="routeName == 'Main'"
           @click="handleClickAddBasket()"
           class="button__warn"
+          id="add-to-basket"
         >
           ADD BASKET
         </button>
@@ -69,7 +70,8 @@ export default {
   },
   computed: {
     routeName() {
-      return this.$route.name
+      if (this.$route) return this.$route.name
+      return 'Main'
     }
   },
   data() {
@@ -82,6 +84,10 @@ export default {
       addToBasket: 'basket/addToBasket'
     }),
     handleClickAddBasket() {
+      this.$notify({
+        title: '👋',
+        text: 'Product added to cart.'
+      })
       this.addToBasket(this.item)
     },
     handleInputAmount() {
