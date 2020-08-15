@@ -80,11 +80,16 @@ export default {
       this.isSubmitting = true
 
       try {
-        await submitOrder(payload)
-        this.resetBasket()
-        this.$router.push({ name: 'Main' })
+        let {
+          data: { status }
+        } = await submitOrder(payload)
+
+        if (status == 'success') {
+          this.resetBasket()
+          this.$router.push({ name: 'Main' })
+        }
       } catch (error) {
-        // errror
+        console.log('An error occurred')
       }
 
       this.isSubmitting = false

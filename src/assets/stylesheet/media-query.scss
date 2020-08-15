@@ -6,6 +6,7 @@
     }
 
     .page-order {
+      padding: var(--padding-l) !important;
       grid-template-columns: 1fr !important;
     }
   }

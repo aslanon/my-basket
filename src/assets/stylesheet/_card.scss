@@ -7,10 +7,18 @@
   grid-row-gap: calc(1.5 * var(--padding-l));
   align-items: center;
   cursor: pointer;
+  position: relative;
   width: 100%;
 
   &:nth-last-child(4n-2) {
     border-left: 1px solid var(--border-color);
+  }
+
+  &__remove {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    z-index: 9;
   }
 
   &__image {

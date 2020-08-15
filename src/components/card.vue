@@ -4,6 +4,13 @@
       📦
     </div>
     <template v-if="!loading">
+      <button
+        v-if="routeName == 'Basket'"
+        @click="removeItemFromCard()"
+        class="card__remove button --text"
+      >
+        Remove
+      </button>
       <img :src="item.image" :alt="item.name" class="card__image" />
       <p class="card__title">
         {{ item.name }}
@@ -40,12 +47,6 @@
             readonly
           />
           <button @click="updateAmount(1)" class="button --outline">+</button>
-          <button
-            @click="removeItemFromCard()"
-            class="flex__item button --text"
-          >
-            Remove
-          </button>
         </span>
       </span>
     </template>

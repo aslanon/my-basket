@@ -32,5 +32,6 @@
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-column-gap: calc(3 * var(--padding-l));
   }
 }
