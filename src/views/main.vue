@@ -26,7 +26,11 @@ export default {
       try {
         this.isLoading = true
         let { data } = await getListings()
-        if (data) this.products = data
+        if (data)
+          this.products = [...data].map(p => ({
+            ...p,
+            amount: 1
+          }))
       } catch (error) {
         // console.log(error)
       }

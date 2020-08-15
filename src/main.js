@@ -4,18 +4,18 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import client from './services/client'
+import Notifications from 'vue-notification'
 
 // import global styles
 import './assets/stylesheet/style.scss'
-
-import { APP_NAME } from './constants'
-
-document.title = APP_NAME
 
 Vue.config.productionTip = false
 
 // HTTP client
 Vue.use(client)
+
+// Notify
+Vue.use(Notifications)
 
 new Vue({
   router,

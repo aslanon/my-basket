@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+import { APP_NAME } from '../constants'
 import Main from '../views/main.vue'
 import Basket from '../views/basket.vue'
 
@@ -10,14 +11,27 @@ const routes = [
   {
     path: '/',
     name: 'Main',
-    component: Main
+    component: Main,
+    meta: {
+      title: APP_NAME
+    }
   },
   {
     path: '/basket',
     name: 'Basket',
-    component: Basket
+    component: Basket,
+    meta: {
+      title: '🛒 Basket'
+    }
   }
 ]
+
+routes.forEach(route => {
+  route['beforeEnter'] = (to, from, next) => {
+    document.title = to.meta.title
+    next()
+  }
+})
 
 const router = new VueRouter({
   mode: 'history',

@@ -12,15 +12,35 @@ const clientInstance = baseURL =>
 const client = clientInstance(process.env.VUE_APP_API_BASE_URL)
 
 client.interceptors.response.use(
-  response => response,
-  error => {
-    if (error && error.response) {
-      const {
-        response: { status }
-      } = error
+  response => {
+    const {
+      data: { message, status }
+    } = response
 
-      console.log(error, status)
+    if (message) {
+      Vue.notify({
+        text: message,
+        type: status
+      })
     }
+
+    return response
+  },
+  error => {
+    const {
+      response: {
+        data: { message, status }
+      }
+    } = error
+
+    if (message) {
+      Vue.notify({
+        text: message,
+        type: status == 'error' ? 'warn' : null
+      })
+    }
+
+    return error
   }
 )
 

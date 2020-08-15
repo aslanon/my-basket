@@ -11,7 +11,7 @@
       <span class="card__footer">
         <span class="card__footer__text">
           <h2>
-            {{ item.price }}
+            {{ (item.price * amount).toFixed(2) }}
             <span>{{ item.currency }}</span>
           </h2>
         </span>
@@ -23,14 +23,19 @@
           ADD BASKET
         </button>
 
-        <input
-          v-if="routeName == 'Basket'"
-          @input="handleInputAmount"
-          type="number"
-          value="1"
-          min="0"
-          step="1"
-        />
+        <span class="flex flex__row">
+          <button>-</button>
+          <input
+            v-if="routeName == 'Basket'"
+            @input="handleInputAmount"
+            type="number"
+            value="1"
+            min="0"
+            step="1"
+            v-model="amount"
+          />
+          <button>+</button>
+        </span>
       </span>
     </template>
   </div>
@@ -55,15 +60,20 @@ export default {
       return this.$route.name
     }
   },
+  data() {
+    return {
+      amount: this.item.amount || 1
+    }
+  },
   methods: {
     ...mapActions({
-      addBasket: 'basket/addBasket'
+      addToBasket: 'basket/addToBasket'
     }),
     handleClickAddBasket() {
-      this.addBasket(this.item)
+      this.addToBasket(this.item)
     },
     handleInputAmount(e) {
-      console.log(e)
+      this.$emit('onChange', { ...this.item, amount: this.amount })
     }
   }
 }

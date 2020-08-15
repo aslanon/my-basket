@@ -4,7 +4,7 @@
   padding: calc(1 * var(--padding-l));
   display: grid;
   grid-template-rows: auto;
-  grid-row-gap: var(--padding-l);
+  grid-row-gap: calc(1.5 * var(--padding-l));
   align-items: center;
   cursor: pointer;
   width: 100%;
@@ -61,4 +61,8 @@
   100% {
     opacity: 0;
   }
+}
+
+.card-order {
+  border-left: 1px solid var(--border-color);
 }

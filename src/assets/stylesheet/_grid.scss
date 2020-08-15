@@ -6,6 +6,10 @@
     grid-row-gap: 0;
     grid-column-gap: 0;
 
+    &.--c1 {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
     &.--c2 {
       grid-template-columns: repeat(2, 1fr);
     }

@@ -1,0 +1,33 @@
+.vue-notification-group {
+  width: 100% !important;
+  max-width: 400px !important;
+}
+
+.vue-notification-wrapper {
+  padding: 20px;
+  display: flex !important;
+}
+
+.auth-notification {
+  width: 100%;
+  padding: 20px;
+  background: var(--color-primary--reverse);
+  font-size: 16px;
+  color: var(--color-primary);
+  box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.171);
+  border-radius: 6px;
+  margin: 0px;
+  transition: right 0.4s cubic-bezier(0.56, 1.19, 0.2, 1.05), opacity 0.4s;
+  cursor: pointer;
+  &:hover {
+    transition: var(--transition-m);
+    transform: scale(1.1);
+  }
+
+  &.warn {
+    border-left: 5px solid var(--color-warn);
+  }
+  &.success {
+    border-left: 5px solid var(--color-success);
+  }
+}

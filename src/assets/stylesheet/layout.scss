@@ -9,7 +9,7 @@
     padding: var(--padding-l) 0;
     border-bottom: 1px solid var(--border-color);
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 1fr auto;
     grid-column-gap: 3rem;
     align-items: center;
 
@@ -31,6 +31,6 @@
   .page-order {
     width: 100%;
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }

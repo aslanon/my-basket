@@ -3,9 +3,6 @@
     <h1 @click="routerPush('Main')" class="logo">
       {{ appName }}
     </h1>
-    <span>
-      <input placeholder="Search..." type="text" />
-    </span>
     <div class="flex center">
       <span @click="routerPush('Basket')" class="nav__item flex__item">
         🧺 Cart {{ list.length ? `(${list.length})` : '' }}
