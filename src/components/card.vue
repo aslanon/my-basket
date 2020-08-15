@@ -23,18 +23,29 @@
           ADD BASKET
         </button>
 
-        <span class="flex flex__row">
-          <button>-</button>
+        <span v-if="routeName == 'Basket'" class="flex flex__row">
+          <button
+            @click="updateAmount(-1)"
+            :disabled="amount == 1"
+            class="button --outline"
+          >
+            -
+          </button>
           <input
-            v-if="routeName == 'Basket'"
-            @input="handleInputAmount"
             type="number"
             value="1"
             min="0"
             step="1"
             v-model="amount"
+            readonly
           />
-          <button>+</button>
+          <button @click="updateAmount(1)" class="button --outline">+</button>
+          <button
+            @click="removeItemFromCard()"
+            class="flex__item button --text"
+          >
+            Remove
+          </button>
         </span>
       </span>
     </template>
@@ -72,8 +83,15 @@ export default {
     handleClickAddBasket() {
       this.addToBasket(this.item)
     },
-    handleInputAmount(e) {
+    handleInputAmount() {
       this.$emit('onChange', { ...this.item, amount: this.amount })
+    },
+    updateAmount(value) {
+      this.amount += value
+      this.handleInputAmount()
+    },
+    removeItemFromCard() {
+      this.$emit('onRemove', this.item)
     }
   }
 }

@@ -9,6 +9,12 @@ export default {
     RESET_BASKET(state) {
       state.list = []
     },
+    REMOVE_FROM_BASKET(state, data) {
+      let index = state.list.map(p => p.id).indexOf(data.id)
+      if (index !== -1) {
+        state.list.splice(index, 1)
+      }
+    },
     ADD_TO_BASKET(state, data) {
       Vue.notify({
         title: '👋',
@@ -23,7 +29,6 @@ export default {
       state.list = state.list.map(p => {
         if (p.id === data.id) {
           p = data
-          p.amount++
         }
         return p
       })

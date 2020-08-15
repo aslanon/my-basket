@@ -10,6 +10,7 @@
           class="card-order"
           v-for="(product, index) in list"
           @onChange="handleChangeBasketItem"
+          @onRemove="handleRemove"
           :key="index + '-card'"
           :item="product"
         ></card>
@@ -64,7 +65,8 @@ export default {
   methods: {
     ...mapActions({
       resetBasket: 'basket/resetBasket',
-      addToBasket: 'basket/addToBasket'
+      addToBasket: 'basket/addToBasket',
+      removeFromBasket: 'basket/removeFromBasket'
     }),
     handleClickContinueShopping() {
       this.$router.go(-1)
@@ -89,6 +91,9 @@ export default {
     },
     handleChangeBasketItem(data) {
       this.addToBasket(data)
+    },
+    handleRemove(item) {
+      this.removeFromBasket(item)
     }
   }
 }
