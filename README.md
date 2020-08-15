@@ -7,7 +7,7 @@ Demo: https://aslanon2.herokuapp.com
 ```bash
 $ git clone https://github.com/aslanon/my-basket.git
 $ cd my-basket
-$ touch .env.dev
+$ touch .env.development
 ```
 
 Fill .env.dev file with required environment variables.
