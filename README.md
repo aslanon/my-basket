@@ -1,5 +1,7 @@
 # my-basket
 
+Demo: https://aslanon2.herokuapp.com
+
 ## Development
 
 $ git clone https://github.com/aslanon/my-basket.git
