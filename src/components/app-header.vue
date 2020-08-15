@@ -4,8 +4,12 @@
       {{ appName }}
     </h1>
     <div class="flex center">
-      <span @click="routerPush('Basket')" class="nav__item flex__item">
-        🧺 Cart {{ list.length ? `(${list.length})` : '' }}
+      <span
+        @click="routerPush('Basket')"
+        :data-count="list.length"
+        class="nav__item nav__item__cart flex__item"
+      >
+        🧺 Cart
       </span>
     </div>
   </nav>
